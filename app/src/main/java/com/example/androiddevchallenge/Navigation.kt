@@ -59,6 +59,7 @@ private fun Bundle.toScreen(): Screen {
             Screen.DetailsScreen(puppy)
         }
     }
+
 }
 
 class NavigationViewModel(savedStateHandle: SavedStateHandle) : ViewModel() {

@@ -50,4 +50,5 @@ fun appContent(vm: NavigationViewModel) {
             }
         }
     }
+
 }

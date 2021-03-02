@@ -42,7 +42,6 @@ fun puppyDetailsScreen(puppy: Puppy) {
         }
     }
 
-
     Scaffold(
 //        topBar = {
 //            TopAppBar(
@@ -88,13 +87,13 @@ fun puppyDetailsScreen(puppy: Puppy) {
 //                finishedListener = { scaleUp = !scaleUp },
 //                animationSpec = spring(stiffness = Spring.StiffnessLow)
 //            )
-////            Image(
-////                modifier = Modifier
-////                    .fillMaxWidth()
-////                    .scale(scale = scale),
-////                bitmap = ImageBitmap.imageResource(id = R.drawable.congurtulations),
-////                contentDescription = "congratulations"
-////            )
+//            Image(
+//                modifier = Modifier
+//                    .fillMaxWidth()
+//                    .scale(scale = scale),
+//                bitmap = ImageBitmap.imageResource(id = R.drawable.congurtulations),
+//                contentDescription = "congratulations"
+//            )
 //        } else {
 //            Button(
 //                onClick = { showDialogState = true },
