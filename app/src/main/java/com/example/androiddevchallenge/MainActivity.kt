@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             MyTheme {
-                AppContent(navigationViewModel)
+                appContent(navigationViewModel)
             }
         }
     }
@@ -41,13 +41,13 @@ class MainActivity : AppCompatActivity() {
 
 // Start building your app here!
 @Composable
-fun AppContent(vm: NavigationViewModel) {
+fun appContent(vm: NavigationViewModel) {
     Crossfade(vm.currentScreen) {
             screen ->
         Surface(color = MaterialTheme.colors.background) {
             when (screen) {
-                is Screen.HomeScreen -> HomeScreen(vm)
-                is Screen.DetailsScreen -> PuppyDetailsScreen(screen.puppy)
+                is Screen.HomeScreen -> homeScreen(vm)
+                is Screen.DetailsScreen -> puppyDetailsScreen(screen.puppy)
             }
         }
     }

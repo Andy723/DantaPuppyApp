@@ -28,24 +28,24 @@ import com.example.androiddevchallenge.data.PuppysRepository
 
 
 @Composable
-fun HomeScreen(vm: NavigationViewModel) = VerticalListView(vm)
+fun homeScreen(vm: NavigationViewModel) = verticalListView(vm)
 
 
 @Composable
-private fun VerticalListView(vm: NavigationViewModel) {
+private fun verticalListView(vm: NavigationViewModel) {
     val list = remember { PuppysRepository.puppyList }
     val onClickItem: (Puppy) -> Unit = remember { { vm.navigateTo(Screen.DetailsScreen(it)) } }
     LazyColumn {
         items(list.size) { index ->
             val puppy = list[index]
             VerticalListItem(puppy = puppy, onClick = onClickItem)
-            ListItemDivider()
+            listItemDivider()
         }
     }
 }
 
 @Composable
-private fun ListItemDivider() {
+private fun listItemDivider() {
     Divider(
         modifier = Modifier.padding(horizontal = 12.dp, vertical = 8.dp),
         color = MaterialTheme.colors.onSurface.copy(alpha = 0.08f)

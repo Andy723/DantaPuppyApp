@@ -34,8 +34,7 @@ import com.example.androiddevchallenge.data.PuppysRepository
 import com.example.androiddevchallenge.ui.theme.MyTheme
 
 @Composable
-fun PuppyDetailsScreen(puppy: Puppy) {
-
+fun puppyDetailsScreen(puppy: Puppy) {
     val pageState = remember {
         PagerState().apply {
             minPage = 0
@@ -133,9 +132,9 @@ fun CarouselDot(selected: Boolean, icon: ImageVector) {
 
 @Preview
 @Composable
-fun PreviewDetails() {
+fun previewDetails() {
     val puppy = PuppysRepository.Edison
     MyTheme {
-        PuppyDetailsScreen(puppy = puppy)
+        puppyDetailsScreen(puppy = puppy)
     }
 }
