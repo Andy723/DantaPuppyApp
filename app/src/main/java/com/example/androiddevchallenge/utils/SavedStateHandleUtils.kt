@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.jetnews.utils
+package com.example.androiddevchallenge.utils
 
 import android.os.Bundle
 import androidx.compose.runtime.MutableState
