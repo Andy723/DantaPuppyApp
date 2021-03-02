@@ -28,7 +28,7 @@ import com.example.androiddevchallenge.data.PuppysRepository
 
 
 @Composable
-fun homeScreen(vm: NavigationViewModel) = verticalListView(vm)
+fun HomeScreen(vm:NavigationViewModel) = verticalListView(vm)
 
 
 @Composable
