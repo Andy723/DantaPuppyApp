@@ -28,12 +28,9 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material.Colors
 import androidx.compose.material.ContentAlpha
 import androidx.compose.material.LocalContentAlpha
 import androidx.compose.material.LocalContentColor
-import androidx.compose.material.Surface
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
@@ -42,20 +39,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.layout.FirstBaseline
-import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.imageResource
 import androidx.compose.ui.semantics.semantics
-import androidx.compose.ui.text.AnnotatedString
-import androidx.compose.ui.text.ParagraphStyle
-import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.example.androiddevchallenge.data.Puppy
 import com.example.androiddevchallenge.ui.theme.typography
 
@@ -137,61 +126,3 @@ private fun PostMetadata() {
         }
     }
 }
-
-@Composable
-private fun CodeBlockParagraph(
-    text: AnnotatedString,
-    textStyle: TextStyle,
-    paragraphStyle: ParagraphStyle
-) {
-    Surface(
-        color = MaterialTheme.colors.codeBlockBackground,
-        shape = MaterialTheme.shapes.small,
-        modifier = Modifier.fillMaxWidth()
-    ) {
-        Text(
-            modifier = Modifier.padding(16.dp),
-            text = text,
-            style = textStyle.merge(paragraphStyle)
-        )
-    }
-}
-
-@Composable
-private fun BulletParagraph(
-    text: AnnotatedString,
-    textStyle: TextStyle,
-    paragraphStyle: ParagraphStyle
-) {
-    Row {
-        with(LocalDensity.current) {
-            // this box is acting as a character, so it's sized with font scaling (sp)
-            Box(
-                modifier = Modifier
-                    .size(8.sp.toDp(), 8.sp.toDp())
-                    .alignBy {
-                        // Add an alignment "baseline" 1sp below the bottom of the circle
-                        9.sp.roundToPx()
-                    }
-                    .background(LocalContentColor.current, CircleShape),
-            ) { /* no content */ }
-        }
-        Text(
-            modifier = Modifier
-                .weight(1f)
-                .alignBy(FirstBaseline),
-            text = text,
-            style = textStyle.merge(paragraphStyle)
-        )
-    }
-}
-
-private data class ParagraphStyling(
-    val textStyle: TextStyle,
-    val paragraphStyle: ParagraphStyle,
-    val trailingPadding: Dp
-)
-
-
-private val Colors.codeBlockBackground: Color
-    get() = onSurface.copy(alpha = .15f)
