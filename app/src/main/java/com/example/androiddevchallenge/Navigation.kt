@@ -36,10 +36,8 @@ private const val SIS_SCREEN = "sis_screen"
 private const val SIS_NAME = "screen_name"
 private const val SIS_PUPPY = "puppy"
 
-
 private fun Screen.toBundle(): Bundle {
     return bundleOf(SIS_NAME to id.name).also {
-        // add extra keys for various types here
         if (this is Screen.DetailsScreen) {
             it.putSerializable(
                 SIS_PUPPY,
@@ -48,7 +46,6 @@ private fun Screen.toBundle(): Bundle {
         }
     }
 }
-
 
 private fun Bundle.getStringOrThrow(key: String) =
     requireNotNull(getString(key)) { "Missing key '$key' in $this" }

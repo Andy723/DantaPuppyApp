@@ -26,10 +26,8 @@ import androidx.compose.ui.unit.dp
 import com.example.androiddevchallenge.data.Puppy
 import com.example.androiddevchallenge.data.PuppysRepository
 
-
 @Composable
-fun HomeScreen(vm:NavigationViewModel) = verticalListView(vm)
-
+fun HomeScreen(vm: NavigationViewModel) = verticalListView(vm)
 
 @Composable
 private fun verticalListView(vm: NavigationViewModel) {
