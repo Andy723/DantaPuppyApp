@@ -68,6 +68,7 @@ class NavigationViewModel(savedStateHandle: SavedStateHandle) : ViewModel() {
         save = { it.toBundle() },
         restore = { it.toScreen() }
     )
+
     @MainThread
     fun onBack(): Boolean {
         val wasHandled = currentScreen != Screen.HomeScreen
@@ -75,9 +76,8 @@ class NavigationViewModel(savedStateHandle: SavedStateHandle) : ViewModel() {
         return wasHandled
     }
 
-
     @MainThread
     fun navigateTo(screen: Screen) {
-        currentScreen= screen
+        currentScreen = screen
     }
 }
